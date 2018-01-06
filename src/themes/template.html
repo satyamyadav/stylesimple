@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="<%= htmlWebpackPlugin.options.base + '/' + htmlWebpackPlugin.options.name %>/">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.options.base %>/commons.js"></script>
+  <%= require('html-loader!./'+ htmlWebpackPlugin.options.name +'/view/top.html') %>
+</head>
+<body>
+  <%= require('html-loader!./'+ htmlWebpackPlugin.options.name +'/view/panel.html') %>
+
+  <%= require('html-loader!./'+ htmlWebpackPlugin.options.name +'/view/bottom.html') %>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/dist/default/default.css">
+
+</head>
+
+<body>
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="well text-red-400">
+      <a class="btn btn-success" href="https://v4-alpha.getbootstrap.com/getting-started/introduction/">Bootstrap Documentation</a>
+    </div>
+    <h1>Bootstrap Themes</h1>
+    <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+  </div>
+
+
+  <div class="container">
+    <h1>Themes</h1>
+    <div class="card p-3">
+
+      <% htmlWebpackPlugin.options.apps.forEach(function(a) { %>
+        <a class="btn btn-lg btn-primar" href="docs/<%= a %>">
+          <%= a %>
+        </a>
+        <% }) %>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
