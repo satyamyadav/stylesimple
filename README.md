@@ -4,7 +4,7 @@
 ```
 A simple styles theme builder.
 ```
-- npm v8, webpack 3, yarn
+- node v8, webpack 3, yarn
 
 - using webpack loaders and plugins.
 

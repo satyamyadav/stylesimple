@@ -4,9 +4,11 @@
   "description": "A simple styles theme builder.",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --display-error-details --progress",
-    "docs": "webpack --config webpack.docs.config.js --display-error-details --progress",
+    "build": "webpack --display-error-details --progress",
+    "bundle": "export NODE_ENV=production && webpack --display-error-details --progress",
+    "watch": "webpack --display-error-details --progress --watch true",
     "clean": "rm -rf dist/* docs/*"
   },
   "author": "Satyam Yadav <satyamyadav3@gmail.com>",
@@ -26,6 +28,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
-    "webpack-bundle-analyzer": "^2.9.1"
+    "webpack-bundle-analyzer": "^2.9.1",
+    "webpack-dev-server": "^2.10.0"
   }
 }

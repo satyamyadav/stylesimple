@@ -3,7 +3,7 @@
 const path = require('path')
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const basePath = process.env.NODE_ENV == 'production' ? '/stylesimple/dist' : '/dist';
 // Create multiple instances
 const extractCSS = new ExtractTextPlugin({
   filename: '/[name].css'
@@ -32,7 +32,7 @@ const HtmlPlug = apps.map(a => {
     template: `./template.html`,
     name: a,
     inject: false,
-    base: '/dist'
+    base: basePath
   })
 })
 
@@ -45,51 +45,54 @@ const docIndex = new HtmlWebpackPlugin({
 
 HtmlPlug.push(docIndex);
 
-module.exports = {
-  context: path.join(__dirname, '/src/themes'),
-  entry: entries,
-  output: {
-    path: path.join(__dirname, "dist"),
-    filename: "[name].js"
-  },
-  module: {
-    rules: [{
-      test: /\.css$/,
-      loaders: extractCSS.extract({
-        fallback: 'style-loader',
-        use: ['css-loader']
+module.exports = env => {
+
+  return {
+    context: path.join(__dirname, '/src/themes'),
+    entry: entries,
+    output: {
+      path: path.join(__dirname, "dist"),
+      filename: "[name].js"
+    },
+    module: {
+      rules: [{
+        test: /\.css$/,
+        loaders: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader']
+        })
+      }, {
+        test: /\.scss$/,
+        loaders: extractSASS.extract({
+          use: ['css-loader', 'sass-loader']
+        })
+      }, {
+        test: /\.less$/,
+        loaders: ['style-loader', 'css-loader', 'less-loader']
+      }]
+    },
+    resolve: {
+      modules: ['node_modules'],
+      extensions: ['.min.js', '.js', '.json', '.scss']
+    },
+    plugins: [
+      new webpack.optimize.CommonsChunkPlugin({
+        filename: "commons.js",
+        name: "commons"
+      }),
+      extractSASS,
+      extractCSS,
+
+      new OptimizeCSSAssetsPlugin({
+        cssProcessor: cssnano,
+        cssProcessorOptions: {
+          discardComments: true
+        },
+        canPrint: true,
       })
-    }, {
-      test: /\.scss$/,
-      loaders: extractSASS.extract({
-        use: ['css-loader', 'sass-loader']
-      })
-    }, {
-      test: /\.less$/,
-      loaders: ['style-loader', 'css-loader', 'less-loader']
-    }]
-  },
-  resolve: {
-    modules: ['node_modules'],
-    extensions: ['.min.js', '.js', '.json', '.scss']
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      filename: "commons.js",
-      name: "commons"
-    }),
-    extractSASS,
-    extractCSS,
 
-    new OptimizeCSSAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorOptions: {
-        discardComments: true
-      },
-      canPrint: true,
-    })
+      // new BundleAnalyzerPlugin()
+    ].concat(HtmlPlug)
 
-    new BundleAnalyzerPlugin()
-  ].concat(HtmlPlug)
-
+  }
 };

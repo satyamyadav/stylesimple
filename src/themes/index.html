@@ -7,7 +7,7 @@
     <%= htmlWebpackPlugin.options.title %>
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/dist/default/default.css">
+  <link rel="stylesheet" href="dist/default/default.css">
 
 </head>
 
@@ -26,10 +26,10 @@
 
   <div class="container">
     <h1>Themes</h1>
-    <div class="card p-3">
+    <div class="card bg-warning col-12 col-md-4 p-2">
 
       <% htmlWebpackPlugin.options.apps.forEach(function(a) { %>
-        <a class="btn btn-lg btn-primar" href="docs/<%= a %>">
+        <a class="btn btn-lg btn-primary text-capitalize mb-2" href="docs/<%= a %>">
           <%= a %>
         </a>
         <% }) %>
