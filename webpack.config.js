@@ -19,9 +19,9 @@ const cssnano = require('cssnano');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var apps = ['default', 'dark', 'material'];
+var apps = ['default', 'dark', 'material', 'hexo'];
 
-var entries = apps.reduce(function(o, a) {
+var entries = apps.reduce(function (o, a) {
   o[`${a}/${a}`] = ['.', a].join('/');
   return o;
 }, {});

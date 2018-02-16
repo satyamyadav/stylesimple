@@ -1,0 +1,10 @@
+
+.tag {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-light;
+  color: $gray-700;
+  border-bottom: $spacer/8 solid $gray-300;
+  &:not(:last-child) {
+    margin-right: $spacer/3;
+  }
+}
