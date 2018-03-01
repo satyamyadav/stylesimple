@@ -1,8 +1,8 @@
 
 
 figure.highlight {
-  background: #282c34;
-  border: 1px solid #ddd;
+  background: #fafafa;
+  border: 1px solid #ccc;
   margin-top: 15px;
   padding: 7px 15px;
   border-radius: 2px;
@@ -12,7 +12,7 @@ figure.highlight {
   font-size: 0.9em;
 }
 figure.highlight figcaption {
-  color: #abb2bf;
+  color: #333;
   font-family: font-mono;
   margin-bottom: 5px;
 }
@@ -33,158 +33,98 @@ figure.highlight table {
 figure.highlight table .gutter {
   color: #5c6370;
   padding-right: 15px;
-  border-right: 1px solid #5c6370;
+  border-right: 1px solid #ccc;
   text-align: right;
 }
 figure.highlight table .gutter .line {
-  color: #5c6370;
+  color: #a4a4a4;
 }
 figure.highlight table .code {
   padding-left: 15px;
-  border-left: 1px solid #5c6370;
-  color: #666;
 }
-figure.highlight table .line {
-  height: 20px;
-}
-figure.highlight table .line.marked {
-  background: #d6d6d6;
-}
-pre {
-  color: #abb2bf;
-}
-pre .comment,
-pre .template_comment,
-pre .diff .header,
-pre .doctype,
-pre .pi,
-pre .lisp .string,
-pre .javadoc {
-  color: #5c6370;
+
+.comment,
+.quote {
+  color: #998;
   font-style: italic;
 }
-pre .keyword,
-pre .winutils,
-pre .method,
-pre .addition,
-pre .css .tag,
-pre .request,
-pre .status,
-pre .nginx .title {
-  color: #e6c07b;
+
+.keyword,
+.selector-tag,
+.subst {
+  color: #6e41c1;
 }
-pre .number,
-pre .command,
-pre .string,
-pre .tag .value,
-pre .phpdoc,
-pre .tex .formula,
-pre .regexp,
-pre .hexcolor {
-  color: #98c379;
+
+.number,
+.literal,
+.variable,
+.template-variable,
+.tag .attr {
+  color: #008080;
 }
-pre .title,
-pre .localvars,
-pre .chunk,
-pre .decorator,
-pre .built_in,
-pre .identifier,
-pre .vhdl,
-pre .literal,
-pre .id,
-pre .function {
-  color: #268bd2;
+
+.string,
+.doctag {
+  color: #d14;
 }
-pre .attribute,
-pre .variable,
-pre .lisp .body,
-pre .smalltalk .number,
-pre .constant,
-pre .class .title,
-pre .parent,
-pre .haskell .type,
-pre .params {
-  color: #b58900;
+
+.title,
+.section,
+.selector-id {
+  color: #900;
 }
-pre .preprocessor,
-pre .preprocessor .keyword,
-pre .shebang,
-pre .symbol,
-pre .symbol .string,
-pre .diff .change,
-pre .special,
-pre .attr_selector,
-pre .important,
-pre .subst,
-pre .cdata,
-pre .clojure .title {
-  color: #cb4b16;
+
+.subst {
+  font-weight: normal;
 }
-pre .deletion {
-  color: #dc322f;
-}
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-.hljs-literal {
-  color: #56b6c2;
-}
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-.hljs-emphasis {
-  font-style: italic;
-}
-.hljs-strong {
+
+.type,
+.class .title {
+  color: #458;
   font-weight: bold;
 }
-.hljs-link {
-  text-decoration: underline;
+
+.tag,
+.name,
+.attribute,
+.params
+ {
+  color: #000080;
+  font-weight: normal;
+}
+
+.regexp,
+.link {
+  color: #009926;
+}
+
+.symbol,
+.bullet {
+  color: #990073;
+}
+
+.built_in,
+.builtin-name {
+  color: #0086b3;
+}
+
+.meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.deletion {
+  background: #fdd;
+}
+
+.addition {
+  background: #dfd;
+}
+
+.emphasis {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: bold;
 }
