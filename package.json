@@ -14,7 +14,7 @@
   "author": "Satyam Yadav <satyamyadav3@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.1.1",
     "css-loader": "^0.28.8",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
